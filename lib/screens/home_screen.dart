@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen>
   void initState() {
     // TODO: implement initState
     super.initState();
-    _controller = TabController(length: 4, vsync: this, initialIndex: 0);
+    _controller = TabController(length: 4, vsync: this, initialIndex: 1);
   }
 
   @override
@@ -54,6 +54,12 @@ class _HomeScreenState extends State<HomeScreen>
           ],
         ),
       ),
+      body: TabBarView(controller: _controller, children: [
+        Text("camera"),
+        Text("chats"),
+        Text("status"),
+        Text("calls")
+      ]),
     );
   }
 }

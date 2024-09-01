@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_escritorio/pages/chat_pages.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,7 +30,9 @@ class _HomeScreenState extends State<HomeScreen>
             onPressed: () {},
             icon: Icon(Icons.search),
           ),
-          PopupMenuButton(itemBuilder: (BuildContext context) {
+          PopupMenuButton<String>(onSelected: (value) {
+            print(value);
+          }, itemBuilder: (BuildContext context) {
             return [
               PopupMenuItem(
                 child: Text("New group"),
@@ -56,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen>
         ],
         bottom: TabBar(
           controller: _controller,
+          indicatorColor: Colors.white,
           tabs: [
             Tab(
               icon: Icon(Icons.camera_alt),
@@ -74,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen>
       ),
       body: TabBarView(controller: _controller, children: [
         Text("camera"),
-        Text("chats"),
+        ChatPage(),
         Text("status"),
         Text("calls")
       ]),

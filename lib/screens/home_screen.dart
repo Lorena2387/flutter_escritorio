@@ -29,12 +29,30 @@ class _HomeScreenState extends State<HomeScreen>
             onPressed: () {},
             icon: Icon(Icons.search),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.more_vert,
-            ),
-          ),
+          PopupMenuButton(itemBuilder: (BuildContext context) {
+            return [
+              PopupMenuItem(
+                child: Text("New group"),
+                value: "New group",
+              ),
+              PopupMenuItem(
+                child: Text("New broadcast"),
+                value: "New broadcast",
+              ),
+              PopupMenuItem(
+                child: Text("Watsapp web"),
+                value: "Whatsapp web",
+              ),
+              PopupMenuItem(
+                child: Text("Starred messages"),
+                value: "Starred messages",
+              ),
+              PopupMenuItem(
+                child: Text("Settings"),
+                value: "Settings",
+              ),
+            ];
+          })
         ],
         bottom: TabBar(
           controller: _controller,

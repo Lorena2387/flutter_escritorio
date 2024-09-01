@@ -12,6 +12,7 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFF075E54),
         onPressed: () {},
         child: Icon(
           Icons.chat,

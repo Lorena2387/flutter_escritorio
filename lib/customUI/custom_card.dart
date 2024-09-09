@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_escritorio/model/chat_model.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key});
+  const CustomCard({super.key, required this.chatModel});
+  final ChatModel chatModel;
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +15,14 @@ class CustomCard extends StatelessWidget {
             leading: CircleAvatar(
               radius: 30,
               child: Image.asset(
-                "assets/images/groups.png",
+                chatModel.isGropup
+                    ? "assets/images/groups.png"
+                    : "assets/images/person.png",
               ),
               backgroundColor: Colors.blueGrey,
             ),
             title: Text(
-              "Dev stack",
+              chatModel.name,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             subtitle: Row(
@@ -28,12 +32,12 @@ class CustomCard extends StatelessWidget {
                   width: 3,
                 ),
                 Text(
-                  "Hi Dev",
+                  chatModel.currentMessage,
                   style: TextStyle(fontSize: 13),
                 ),
               ],
             ),
-            trailing: Text("18:04"),
+            trailing: Text(chatModel.time),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 20, left: 80),

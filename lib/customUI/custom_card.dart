@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_escritorio/model/chat_model.dart';
+import 'package:flutter_escritorio/screens/individual_page.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({super.key, required this.chatModel});
@@ -8,7 +9,10 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => IndividualPage()));
+      },
       child: Column(
         children: [
           ListTile(

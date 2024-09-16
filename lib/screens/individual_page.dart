@@ -110,12 +110,23 @@ class _IndividualPageState extends State<IndividualPage> {
               child: Row(
                 children: [
                   Container(
-                      width: MediaQuery.of(context).size.width - 55,
-                      child: Card(
-                          margin: EdgeInsets.only(left: 2, right: 2, bottom: 8),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25)),
-                          child: TextFormField())),
+                    width: MediaQuery.of(context).size.width - 55,
+                    child: Card(
+                      margin: EdgeInsets.only(left: 2, right: 2, bottom: 8),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25)),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          prefixIcon: IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.emoji_emotions),
+                          ),
+                          hintText: "Type a message",
+                          contentPadding: EdgeInsets.all(5),
+                        ),
+                      ),
+                    ),
+                  ),
                   CircleAvatar()
                 ],
               ),

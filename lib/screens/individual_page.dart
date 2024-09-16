@@ -116,6 +116,8 @@ class _IndividualPageState extends State<IndividualPage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25)),
                       child: TextFormField(
+                        textAlignVertical: TextAlignVertical.center,
+                        keyboardType: TextInputType.multiline,
                         decoration: InputDecoration(
                           prefixIcon: IconButton(
                             onPressed: () {},

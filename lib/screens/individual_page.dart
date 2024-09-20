@@ -118,10 +118,24 @@ class _IndividualPageState extends State<IndividualPage> {
                       child: TextFormField(
                         textAlignVertical: TextAlignVertical.center,
                         keyboardType: TextInputType.multiline,
+                        maxLines: 5,
+                        minLines: 1,
                         decoration: InputDecoration(
                           prefixIcon: IconButton(
                             onPressed: () {},
                             icon: Icon(Icons.emoji_emotions),
+                          ),
+                          suffixIcon: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(Icons.attach_file),
+                              ),
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.camera_alt))
+                            ],
                           ),
                           hintText: "Type a message",
                           contentPadding: EdgeInsets.all(5),

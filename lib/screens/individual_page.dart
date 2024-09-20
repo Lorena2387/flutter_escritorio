@@ -110,7 +110,7 @@ class _IndividualPageState extends State<IndividualPage> {
               child: Row(
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width - 55,
+                    width: MediaQuery.of(context).size.width - 60,
                     child: Card(
                       margin: EdgeInsets.only(left: 2, right: 2, bottom: 8),
                       shape: RoundedRectangleBorder(
@@ -121,6 +121,7 @@ class _IndividualPageState extends State<IndividualPage> {
                         maxLines: 5,
                         minLines: 1,
                         decoration: InputDecoration(
+                          border: InputBorder.none,
                           prefixIcon: IconButton(
                             onPressed: () {},
                             icon: Icon(Icons.emoji_emotions),
@@ -143,7 +144,24 @@ class _IndividualPageState extends State<IndividualPage> {
                       ),
                     ),
                   ),
-                  CircleAvatar()
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      bottom: 8,
+                      right: 5,
+                      left: 2,
+                    ),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Color(0xFF128C7E),
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.mic,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
+                  )
                 ],
               ),
             )
